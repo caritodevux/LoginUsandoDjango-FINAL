@@ -1,0 +1,18 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenida</title> 
+</head> 
+<body> 
+<!-- request.user representa al usuario autenticado. --> 
+    <h1> Bienvenido {{ request.user.username }} </h1> 
+    <p> Has iniciado sesión correctamente. </p> 
+    <hr> 
+    <h2> Mis datos </h2> 
+    <p> <strong>Usuario:</strong> {{ request.user.username }} </p>
+    <p> <strong>Nombre:</strong> {{ request.user.first_name }} </p> 
+    <p> <strong>Apellido:</strong> {{ request.user.last_name }} </p> 
+    <p> <strong>Correo:</strong> {{ request.user.email }} </p>
+</body> 
+</html>

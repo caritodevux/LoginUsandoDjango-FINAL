@@ -1,0 +1,23 @@
+<!DOCTYPE html> 
+<html lang="es"></html>
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Registro</title> 
+</head> 
+<body> 
+    <h1> Crear una cuenta </h1>
+    <!-- El formulario enviará sus datos utilizando el método POST. --> 
+    <form method="POST"> 
+    <!-- Protección de seguridad utilizada por Django. --> 
+    {% csrf_token %} 
+    <!-- Django generará los campos de nuestro formulario. --> 
+    {{ form.as_p }} 
+    <button type="submit"> Registrarse </button>
+</form> 
+<hr> 
+<p> 
+    ¿Ya tienes una cuenta? 
+    <a href="{% url 'login' %}"> Iniciar sesión </a> 
+</p> 
+</body> 
+</html>
