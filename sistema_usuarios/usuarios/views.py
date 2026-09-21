@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect 
-# Importamos nuestro formulario. 
-from .forms import RegistroUsuarioForm
+# Importamos nuestros formularios. 
+from .forms import (
+    RegistroUsuarioForm,
+    EditarUsuarioForm,
+)
 from django.contrib.auth.decorators import login_required
 
 # login_required significa que solamente 
@@ -33,4 +36,48 @@ def registro(request):
         { 
             'form': form 
         } 
+    )
+
+@login_required
+def editar_perfil(request):
+    # Si recibimos información del formulario...
+    if request.method == 'POST':
+        form = EditarUsuarioForm(
+            request.POST,
+            instance=request.user
+        )
+        if form.is_valid():
+            # Guardamos los cambios.
+            form.save()
+            # Regresamos a bienvenida.
+            return redirect('bienvenida')
+    else:
+        # Cuando solamente abrimos la página (GET), cargamos los datos actuales.
+        form = EditarUsuarioForm(
+            instance=request.user
+        )
+        
+    # Mostramos el archivo HTML para GET o para POST con errores.
+    return render(
+        request,
+        'usuarios/editar_perfil.html',
+        {
+            'form': form
+        }
+    )
+
+@login_required
+def eliminar_cuenta(request):
+    # Por seguridad solamente eliminamos si la petición utiliza POST.
+    if request.method == 'POST':
+    # Obtenemos al usuario autenticado.
+        usuario = request.user
+    # Eliminamos el registro.
+        usuario.delete()
+    # Volvemos al login.
+        return redirect('login')
+    # Si todavía no confirmó, mostramos una página de confirmación.
+    return render(
+    request,
+    'usuarios/eliminar_cuenta.html'
     )

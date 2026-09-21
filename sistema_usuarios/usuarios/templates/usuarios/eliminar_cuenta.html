@@ -1,0 +1,17 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar cuenta</title>
+</head>
+<body>
+    <h1>Eliminar cuenta</h1>
+    <p>¿Está seguro que desea eliminar su cuenta?</p>
+    <p>Esta acción no se puede deshacer.</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Sí, eliminar mi cuenta</button>
+    </form>
+    <br>
+    <a href="{% url 'bienvenida' %}">Cancelar</a>
+</body>
+</html>

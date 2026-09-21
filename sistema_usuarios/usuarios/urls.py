@@ -25,4 +25,16 @@ urlpatterns = [
         views.bienvenida, 
         name='bienvenida' 
     ),
+    # Editar perfil
+    path(
+    'editar-perfil/',
+    views.editar_perfil,
+    name='editar_perfil'
+    ),
+    # Eliminar perfil
+    path(
+    'eliminar-cuenta/',
+    views.eliminar_cuenta,
+    name='eliminar_cuenta'
+    ),
     ]

@@ -33,3 +33,15 @@ class RegistroUsuarioForm(UserCreationForm):
             'password1', 
             'password2', 
             ]
+
+# Formulario para editar datos del usuario.
+class EditarUsuarioForm(forms.ModelForm):
+    class Meta:
+    # Trabajamos con User.
+        model = User
+        # Solamente permitiremos modificar estos campos.
+        fields = [
+        'first_name',
+        'last_name',
+        'email',
+        ]

@@ -14,5 +14,7 @@
     <p> <strong>Nombre:</strong> {{ request.user.first_name }} </p> 
     <p> <strong>Apellido:</strong> {{ request.user.last_name }} </p> 
     <p> <strong>Correo:</strong> {{ request.user.email }} </p>
+    <a href="{% url 'editar_perfil' %}">Editar mis datos</a>
+    <a href="{% url 'eliminar_cuenta' %}">Eliminar mi cuenta</a>
 </body> 
 </html>
