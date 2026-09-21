@@ -19,6 +19,7 @@ urlpatterns = [
             ), 
             name='login' 
         ),
+    # Bienvenida
     path( 
         'bienvenida/', 
         views.bienvenida, 

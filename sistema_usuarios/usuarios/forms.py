@@ -1,11 +1,11 @@
 # Importamos el sistema de formularios de Django. 
 from django import forms 
 # Django ya incorpora un formulario diseñado 
-# # especialmente para crear usuarios. 
+# especialmente para crear usuarios. 
 from django.contrib.auth.forms import UserCreationForm 
 
 # Importamos el modelo de usuario incorporado 
-# # por Django. 
+# por Django. 
 from django.contrib.auth.models import User 
 # Creamos nuestro formulario de registro. 
 # Heredamos de UserCreationForm para aprovechar 

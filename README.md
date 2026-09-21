@@ -37,7 +37,6 @@ git clone url del proyecto (para clonar proyectos)
 ```
 
 # Instalación python, django, venv, configuración, models, migraciones y admin.
-
 Crea entorno virtual:
 ```
 python -m venv venv 
@@ -60,3 +59,5 @@ Instalar Django:
 ```
 pip install django
 ```
+
+# 

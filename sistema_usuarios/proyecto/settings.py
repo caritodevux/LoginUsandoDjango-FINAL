@@ -126,3 +126,11 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
+# Después de iniciar sesión correctamente,
+# Django enviará al usuario a esta página.
+LOGIN_REDIRECT_URL = 'bienvenida'
+# Si una página requiere autenticación
+# y el usuario no está conectado,
+# Django lo enviará al login.
+LOGIN_URL = 'login'
