@@ -38,15 +38,25 @@ git clone url del proyecto (para clonar proyectos)
 
 # Instalación python, django, venv, configuración, models, migraciones y admin.
 
-    Crea entorno virtual:
-
-    python -m venv venv Activar el entorno en windows:
-    venv\Scripts\activate Activar entorno en Mac:
-    source venv/bin/activate
-
+Crea entorno virtual:
+```
+python -m venv venv 
+```
+Activar el entorno en windows:
+```
+venv\Scripts\activate 
+```
+Activar entorno en Mac:
+```
+source venv/bin/activate
+```
 sale (venv) al principio si sale todo bien
 
-    Comprobar que este instalado:
-
-    django-admin --version Instalar Django:
-    pip install django
+Comprobar que este instalado:
+```
+django-admin --version 
+```
+Instalar Django:
+```
+pip install django
+```
