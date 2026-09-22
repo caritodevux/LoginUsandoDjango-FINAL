@@ -16,5 +16,12 @@
     <p> <strong>Correo:</strong> {{ request.user.email }} </p>
     <a href="{% url 'editar_perfil' %}">Editar mis datos</a>
     <a href="{% url 'eliminar_cuenta' %}">Eliminar mi cuenta</a>
+    <form
+        method="POST"
+        action="{% url 'logout' %}"
+    >
+        {% csrf_token %}
+        <button type="submit">Cerrar sesión</button>
+</form>
 </body> 
 </html>

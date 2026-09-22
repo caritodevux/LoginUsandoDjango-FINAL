@@ -1,8 +1,12 @@
 # Importamos path. 
 from django.urls import path 
 # Importamos nuestras vistas. 
-from django.contrib.auth.views import LoginView
+#from django.contrib.auth.views import LoginView
 from . import views
+from django.contrib.auth.views import (
+    LoginView,
+    LogoutView,
+)
 
 urlpatterns = [
     #Direccion/registro/ 
@@ -27,14 +31,20 @@ urlpatterns = [
     ),
     # Editar perfil
     path(
-    'editar-perfil/',
-    views.editar_perfil,
-    name='editar_perfil'
+        'editar-perfil/',
+        views.editar_perfil,
+        name='editar_perfil'
     ),
     # Eliminar perfil
     path(
-    'eliminar-cuenta/',
-    views.eliminar_cuenta,
-    name='eliminar_cuenta'
+        'eliminar-cuenta/',
+        views.eliminar_cuenta,
+        name='eliminar_cuenta'
+    ),
+    #LoginView
+    path(
+        'logout/',
+        LogoutView.as_view(),
+        name='logout'
     ),
     ]

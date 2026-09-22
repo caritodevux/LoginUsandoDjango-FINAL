@@ -134,3 +134,5 @@ LOGIN_REDIRECT_URL = 'bienvenida'
 # y el usuario no está conectado,
 # Django lo enviará al login.
 LOGIN_URL = 'login'
+#Logout. (parte 48)
+LOGOUT_REDIRECT_URL = 'login'
